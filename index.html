@@ -5,6 +5,7 @@
     <title>TerraShield Pro | Disaster Intelligence</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="stats-bar">
@@ -36,6 +37,11 @@
                     <div class="card"><span>🏥</span><p>Hospitals: OK</p></div>
                     <div class="card"><span>📡</span><p>Nodes: 128</p></div>
                 </div>
+            </section>
+
+            <section class="chart-section">
+                <h3>Fire Spread Trend</h3>
+                <canvas id="fireChart" style="height: 150px;"></canvas>
             </section>
 
             <section class="capabilities-section">

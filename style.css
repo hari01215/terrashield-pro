@@ -40,13 +40,14 @@ body {
 /* Main Container */
 #main-container { display: flex; flex: 1; overflow: hidden; }
 
-/* Sidebar */
+/* Glassmorphism Sidebar */
 #sidebar { 
     flex: 0 0 300px; 
-    background: #162435; 
+    background: rgba(11, 19, 30, 0.85); 
+    backdrop-filter: blur(15px); 
     padding: 20px; 
     overflow-y: auto; 
-    border-right: 2px solid #2d415e;
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 
 /* Operational Overview Grid */
@@ -88,6 +89,19 @@ h3 { margin-top: 20px; color: #7496c0; border-bottom: 1px solid #2d415e; padding
     color: #ffffff; 
 }
 
+/* Fire Chart Section */
+.chart-section {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    height: 200px;
+}
+#fireChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
 /* Key Capabilities Section */
 .capabilities-section {
     background: rgba(45, 65, 94, 0.3);
@@ -111,7 +125,11 @@ h3 { margin-top: 20px; color: #7496c0; border-bottom: 1px solid #2d415e; padding
 .alert-info { border-left: 4px solid #3498db; color: #a2d2ff; }
 
 /* Map Area */
-#map { flex: 1; height: 100%; }
+#map { 
+    flex: 1; 
+    height: 100%; 
+    z-index: 1; /* Map-ai bottom-la vachu, elements-ai mela kundu */
+}
 
 /* Legend */
 #legend { 
@@ -125,7 +143,7 @@ h3 { margin-top: 20px; color: #7496c0; border-bottom: 1px solid #2d415e; padding
 
 /* Wind Particle Animation */
 .wind-arrow-particle {
-    animation: moveWind 2s linear infinite;
+    animation: moveWind linear infinite;
     pointer-events: none;
 }
 
