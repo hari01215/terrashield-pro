@@ -1,8 +1,0 @@
-{
-  "name": "TerraShield",
-  "short_name": "TerraShield",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#0b131e",
-  "theme_color": "#0b131e"
-}
