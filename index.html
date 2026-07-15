@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TerraShield Pro | Disaster Intelligence</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="stats-bar">
+        <span>🔥 Active Fires: 23</span> <span>⚠️ Risk Zones: 14</span> <span>🏠 Shelters: 32</span> <span>📡 Responders: 128</span>
+    </div>
+
+    <div id="main-container">
+        <aside id="sidebar">
+            <nav>
+                <ul class="nav-links">
+                    <li onclick="showSection('overview')">📊 Overview</li>
+                    <li onclick="showSection('map')">🗺️ Live Map</li>
+                    <li onclick="showSection('alerts')">🔔 Alerts</li>
+                    <li onclick="showSection('evacuations')">🏃 Evacuations</li>
+                    <li onclick="showSection('infrastructure')">🏗️ Infrastructure</li>
+                    <li onclick="showSection('reports')">📋 Reports</li>
+                    <li onclick="showSection('responders')">👥 Responders</li>
+                    <li onclick="showSection('settings')">⚙️ Settings</li>
+                </ul>
+            </nav>
+
+            <section id="overview" class="overview-section">
+                <h3>Operational Overview</h3>
+                <div class="overview-grid">
+                    <div class="card"><span>🔥</span><p>Fires: 23</p></div>
+                    <div class="card"><span>⚠️</span><p>Risk: 14</p></div>
+                    <div class="card"><span>🏠</span><p>Shelters: 32</p></div>
+                    <div class="card"><span>🚧</span><p>Roads: Active</p></div>
+                    <div class="card"><span>🏥</span><p>Hospitals: OK</p></div>
+                    <div class="card"><span>📡</span><p>Nodes: 128</p></div>
+                </div>
+            </section>
+
+            <section id="weather" class="weather-section">
+                <div id="weather-box" class="chart-section">
+                    <h3>Weather Conditions</h3>
+                    <div class="accu-card">
+                        <i class="fas fa-wind" style="color: #7496c0;"></i>
+                        <p>Click map to view intelligence</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="fire-trend" class="chart-section">
+                <h3>Fire Spread Trend</h3>
+                <canvas id="fireChart" style="height: 150px;"></canvas>
+            </section>
+
+            <section id="capabilities" class="capabilities-section">
+                <h3>Key Capabilities</h3>
+                <ul class="nav-links">
+                    <li>🛰️ Real-time Satellite & IoT Tracking</li>
+                    <li>🗺️ Smart Evacuation Planning</li>
+                    <li>🚧 Live Infrastructure Status</li>
+                    <li>🌐 Offline Ready (PWA)</li>
+                    <li>📡 LoRa Remote Communication</li>
+                    <li>📱 SMS Alert Sync</li>
+                </ul>
+            </section>
+
+            <section id="layers" class="layers-section">
+                <h3>Data Layers</h3>
+                <label><input type="checkbox" checked> Fire Hotspots</label><br>
+                <label><input type="checkbox" checked> Risk Zones</label><br>
+                <label><input type="checkbox" checked> Smoke Density</label><br>
+                <label><input type="checkbox" checked> Wind Direction</label><br>
+                <label><input type="checkbox" checked> Roads</label><br>
+                <label><input type="checkbox" checked> Evacuation Routes</label><br>
+                <label><input type="checkbox" checked> Shelters</label><br>
+                <label><input type="checkbox" checked> Hospitals</label>
+            </section>
+
+            <section id="alerts" class="alerts-section">
+                <h3>Live Alerts</h3>
+                <div id="alerts-container">
+                    </div>
+            </section>
+        </aside>
+
+        <main id="map" class="map-section"></main>
+    </div>
+
+    <div id="legend">
+        <span>Low</span><span class="box green"></span>
+        <span>Moderate</span><span class="box yellow"></span>
+        <span>High</span><span class="box orange"></span>
+        <span>Extreme</span><span class="box red"></span>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
